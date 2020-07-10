@@ -1,76 +1,101 @@
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
 header {
-
-
+  display: flex;
 }
 
 
 h2 {
-
+  text-align: center;
+  padding: 10px;
 }
 
 .nav {
-
-
-  }
-
-  li {
-
+  display: flex;
 
   }
 
-  .content{
-
+li {
+  text-align: center;
+  padding: 10px;
+  list-style: none;
 }
 
-  .aside {
+.content{
+  display: flex;
+}
 
-  }
+.aside {
+  display: flex;
+}
 
-  .slidebox{
+.slidebox{
+  text-align: center;
+}
 
-   
-  }
-
-  .article{
-
-  }
-
-
-.poem{
-
+.article{
+  display: flex;
 }
 
 
 /*Device = Tablets, Ipads (portrait)
   Screen = B/w 600px to 990px*/
-  @media (min-width:600px) and (max-width: 990px)  {
-    .article {
-
+@media (min-width:600px) and (max-width: 990px)  {
+  .article {
+    flex-grow: 2;
+    width: 66%;
+    flex-direction: column;
   } 
-header{
+
+  header{
+    display: none;
+  }
+
+  .nav{
+    justify-content: space-evenly;
+  }
+
+  .aside{
+    flex-grow: 1;
+    flex-direction: column;
+    width: 33%;
+  }
+  .slidebox{
+    height : 100%;
+  }
 
 }
-}
+
 
 /*  Small devices    */
 @media (max-width:599px) {
 
-header,.content{
-
-}
-
-.nav {
-
-
+  header,.content{
+    display: none;
   }
 
+  .nav {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
 
-.nav > li {
+  .nav > li {
+    align-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+  }
+  
+  .content{
+    display: none;
+  }
 
 }
 
-
-}
 
 
   
