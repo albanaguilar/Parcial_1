@@ -1,4 +1,4 @@
-#Parte 1
+# Parte1:
 
 <ul>
 	<li>First fork the profesor repository from his profile</li>
