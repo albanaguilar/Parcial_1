@@ -7,9 +7,7 @@
 
 let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogelio','Bertha'];
 /*
-
 Crea una funcion llamada: challenge1  que realice lo siguiente: 
-
 1) Pregunta el usuario cuantos botones necesita. 
 2) Por medio de un FOR  realizar los siguiente:
 
@@ -21,13 +19,16 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 */
 
 // CREA TU FUNCION challenge1 aqui:
-// function challenge1(){
-//     var numBotones = prompt('Cuantos botones desea?');
+function challenge1(){
+     var numBotones = prompt('Cuantos botones desea?');
 
-//     for (var i = 0; i < nombres.length; i++) {
-//         Things[i]
-//     }
-// }
+    for (var i = 0; i < numBotones; i++) {
+        var boton = document.createElement("boton");
+        boton.innerText = nombres[i];
+
+        document.getElementById("dummy").appendChild(boton);
+     }
+ }
 
 
 /*
@@ -43,19 +44,13 @@ function challenge2(){
 
 
 /*
-
 A) Define un objeto tipo "Dog" que reciba 3 parametros
-
 1) Nombre
 2) Color
 3) Raza
-
-
 B) Crea 3 objectos siguiendo esa clase con diferentes valores
 
 eJ   var fido = new Dog("Fido","Cafe","Poodle")
-
-
 *****BONUS**** 10  puntos
 
 Crea una método llamado printInfo()  que escriba en consola todas las propiedades del objeto que lo invoca. 
@@ -67,12 +62,27 @@ fido.printInfo();
 Deberia escribir en consola
 
 "Nombre: Fido , De color: Cafe , Raza: Poodle"
-
-
 */
-
 // CREA TU FUNCION printInfo() AQUI
+var Dog = function(nombre, color, raza){
+  this.nombre = nombre;
+  this.color = color;
+  this.raza = raza;
 
+  this.printInfo = function(){
+      console.log("Nombre: " + this.nombre +",De color: " +this.color +", Raza: "+ this.raza);
+  }
+};
+
+function challenge3( ){
+    var lucas = new Dog("Lucas", "Verde", "Pomeranian");
+    var dany = new Dog("Dany", "Blanco", "Husky");
+    var chuy = new Dog("Chuy", "Rojo", "Shitzu");
+
+    lucas.printInfo();
+    dany.printInfo();
+    chuy.printInfo();
+}
 
 
 
@@ -84,7 +94,7 @@ Deberia escribir en consola
 
     <button onclick="challenge1()">Challenge 1</button>
     <button onclick="challenge2()">Challenge 2</button>
-    <button onclick="challenge3()">Challenge 2</button>
+    <button onclick="challenge3()">Challenge 3</button>
 
   
 <div id = "dummy">
